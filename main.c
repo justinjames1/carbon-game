@@ -26,7 +26,7 @@ int main(void) {
     int load = 0;
     while (!WindowShouldClose()) { 
         BeginDrawing();
-        DisableCursor;
+        DisableCursor();
         ClearBackground(GRAY);
        DrawText("untiled 3d game", 100,20,50,BLACK); 
        DrawText("Hit enter to launch!", 100,100,35,BLACK); 
