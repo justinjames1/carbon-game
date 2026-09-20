@@ -3,24 +3,30 @@
 int main(void) {
     SetConfigFlags(FLAG_WINDOW_RESIZABLE); 
     InitWindow(600, 400, "CARBON CILENT");
-    SetTargetFPS(180);
+    SetTargetFPS(400);
 
-Vector3 centerPos = {0,0,0};
 
  int camY = 500;
  int a = 300;
  Vector3 position = {1,a,1};
  Camera3D camera = { 5 };
     camera.position = (Vector3){ 150,camY,200 }; // Camera position
-    camera.target = (Vector3){ 10, 0, 0 };   // Camera looking at point
+    camera.target = (Vector3){ 0, 1, 0 };   // Camera looking at point
+    Vector3 position1 = {0,-50,0};
+ 
+
     camera.up = (Vector3){ 0, 1, 0 };       // Camera up vector (rotation axis)
-    camera.fovy = 100;                             // Camera field-of-view Y
+    camera.fovy = 40;                             // Camera field-of-view Y
     camera.projection = CAMERA_PERSPECTIVE;          // Camera mode type
+
+
+
     int BASE = 30;
     int HEIGHTBASE = 5;
     int load = 0;
     while (!WindowShouldClose()) { 
         BeginDrawing();
+        DisableCursor;
         ClearBackground(GRAY);
        DrawText("untiled 3d game", 100,20,50,BLACK); 
        DrawText("Hit enter to launch!", 100,100,35,BLACK); 
@@ -31,10 +37,14 @@ Vector3 centerPos = {0,0,0};
 
 
         if(load == 1){
-         UpdateCamera(&camera, CAMERA_FIRST_PERSON);
+
+UpdateCamera(&camera, CAMERA_THIRD_PERSON);
+
         BeginMode3D(camera); 
         ClearBackground(BLACK);
-        DrawCubeWires(position,100,50,50,GREEN);
+        DrawCubeWires(position,10,50,50,GREEN);
+
+        DrawCubeWires(position1,10,5,5,BLUE);
 
 if (IsKeyPressed(KEY_M))
        {load = 0;}
