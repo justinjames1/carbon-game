@@ -13,13 +13,9 @@ int main(void) {
     camera.position = (Vector3){ 150,camY,200 }; // Camera position
     camera.target = (Vector3){ 0, 1, 0 };   // Camera looking at point
     Vector3 position1 = {0,-50,0};
- 
-
     camera.up = (Vector3){ 0, 1, 0 };       // Camera up vector (rotation axis)
     camera.fovy = 40;                             // Camera field-of-view Y
     camera.projection = CAMERA_PERSPECTIVE;          // Camera mode type
-
-
 
     int BASE = 30;
     int HEIGHTBASE = 5;
@@ -32,9 +28,6 @@ int main(void) {
        DrawText("Hit enter to launch!", 100,100,35,BLACK); 
        if (IsKeyPressed(KEY_ENTER))
        {load = 1;}
-
-
-
 
         if(load == 1){
 
