@@ -1,4 +1,4 @@
-#include "raylib.h"
+#include "config.h"
 
 int main(void) {
     SetConfigFlags(FLAG_WINDOW_RESIZABLE); 
